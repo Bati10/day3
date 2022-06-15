@@ -1,0 +1,29 @@
+<div class="text-center fs-1 my-4"> Your Order</div>
+<div class="bla">
+    <div class="cart">
+        <div class="cart-headline h4 p-2">Cart</div>
+        <div class="cart-item d-flex justify-content-top mb-3" *ngFor="let item of items">
+            <div class="col-md-3">
+                <img src="{{item.img}}" class="img-fluid rounded-start">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.name}}</h5>
+                    <p class="card-text">{{item.price | currency:"EUR" }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>{{total}}</p>
+
+<h1 class="h1 text-center mt-5 mb-3">Order Form</h1>
+<div class="container">
+    <form class="d-flex flex-column justify-content-center align-items-center" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+        <input class="m-2 p-2" type="text" placeholder="Your First Name" formControlName="name">
+        <input class="m-2 p-2" type="text" placeholder="Your Last Name" formControlName="lname">
+        <input class="m-2 p-2" type="text" placeholder="Your Address" formControlName="address">
+        <input class="m-2 p-2" type="email" placeholder="Your E-Mail" formControlName="email">
+        <button class="btn btn-primary text-center mt-3 mb-5" type="submit">Purchase</button>
+    </form>
+</div>

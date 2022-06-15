@@ -1,0 +1,36 @@
+<!-- <h2>Product Details</h2>
+<div *ngIf="product">
+    <h3>{{ product.name }}</h3>
+    <h4>{{ product.price | currency }}</h4>
+    <p>{{ product.description }}</p>
+    <button (click)="addToCart()">Order</button>
+</div>
+<div class="container"> -->
+<h1 class="h1 text-center m-5">Menu Details</h1>
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 gap-5 justify-content-center mb-5">
+    <div class="card p-0 " style="width: 15rem;">
+        <img src="{{product.img}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">{{product.price | currency:"EUR" }}</p>
+            <a (click)="addToCart()" class="btn btn-primary text-center">Order</a>
+        </div>
+    </div>
+</div>
+
+<!-- !-- <div class="text-center fs-1 m-3">Products</div>
+<div class="row">
+    <div *ngFor="let product of products; index as productId" class="col-lg-4 col-md-6 col-xs-12">
+        <div class="card mx-auto">
+            <img src="{{product.img}}" class="card-img-top" style="height:20rem; object-fit:cover">
+            <div class="card-body p-0">
+                <h5 class="card-title text-center bg-dark text-light fs-3 p-1">
+                    <a routerLink="products/{{productId}}"></a>{{product.name}}</h5>
+                <p class="card-text ps-2">Price: {{product.price}}€</p>
+                <p *ngIf="product.description" class="card-text ps-2">Description: {{product.description}}</p>
+
+            </div>
+        </div>
+    </div>
+</div> -->
